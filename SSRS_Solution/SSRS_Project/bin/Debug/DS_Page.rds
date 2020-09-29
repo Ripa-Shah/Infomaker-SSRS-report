@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DS_Page">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=DESKTOP-M7Q49F6\MSSQL;Initial Catalog=TmsEPrd</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
+    <Prompt>Specify a user name and password for data source DS_Page</Prompt>
+  </ConnectionProperties>
+  <DataSourceID>f3e5b999-b8d1-4a74-8772-9384ac3eff8e</DataSourceID>
+</RptDataSource>
