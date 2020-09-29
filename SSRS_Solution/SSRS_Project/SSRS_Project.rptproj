@@ -55,10 +55,14 @@
     <Report Include="Basic Report.rdl" />
     <Report Include="Basic Tabular Report.rdl" />
     <Report Include="Blocked_rpt.rdl" />
+    <Report Include="Dynamic_Parameter_rpt.rdl" />
     <Report Include="Multiple_Stepped_rpt.rdl" />
     <Report Include="PageWise Report.rdl" />
+    <Report Include="Page_rpt.rdl" />
     <Report Include="Report2.rdl" />
     <Report Include="Report3.rdl" />
+    <Report Include="RowNumber.rdl" />
+    <Report Include="StaticParameter.rdl" />
     <Report Include="Stepped_rpt.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />

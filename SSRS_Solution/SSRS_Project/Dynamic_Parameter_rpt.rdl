@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DS_Dynamic">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=DESKTOP-M7Q49F6\MSSQL;Initial Catalog=AdventureWorksDW2014</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <rd:DataSourceID>4b53b42a-25e1-4388-a022-f01908df1d91</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DST_Dynamic">
+      <Query>
+        <DataSourceName>DS_Dynamic</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Dept">
+            <Value>=Parameters!Dept.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT [FinanceKey]
+      ,[DateKey]
+	  ,do.OrganizationName
+      ,dg.DepartmentGroupName
+      ,ds.ScenarioName
+      ,da.AccountDescription
+      ,[Amount]
+      ,[Date]
+  FROM [AdventureWorksDW2014].[dbo].[FactFinance] ff
+  JOIN [AdventureWorksDW2014].[dbo].[DimOrganization] do
+  ON ff.OrganizationKey=do.OrganizationKey
+  JOIN [AdventureWorksDW2014].[dbo].[DimDepartmentGroup] dg
+  ON dg.DepartmentGroupKey=ff.DepartmentGroupKey
+  JOIN [AdventureWorksDW2014].[dbo].[DimAccount] da
+  ON da.AccountKey=ff.AccountKey
+  JOIN [AdventureWorksDW2014].[dbo].[DimScenario] ds
+  ON ds.ScenarioKey=ff.ScenarioKey
+  Where dg.DepartmentGroupName=(@Dept)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="FinanceKey">
+          <DataField>FinanceKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DateKey">
+          <DataField>DateKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OrganizationName">
+          <DataField>OrganizationName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DepartmentGroupName">
+          <DataField>DepartmentGroupName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ScenarioName">
+          <DataField>ScenarioName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AccountDescription">
+          <DataField>AccountDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Date">
+          <DataField>Date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DST_Dynamic_Parameter">
+      <Query>
+        <DataSourceName>DS_Dynamic</DataSourceName>
+        <CommandText>/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT 
+      distinct dg.DepartmentGroupName,
+	  case when DepartmentGroupName='Corporate' then 'Corporate Dept'
+     when DepartmentGroupName='Executive General and Administration' then 'Executive General and Administration Dept'
+	 when DepartmentGroupName='Executive General and Administration' then 'Executive General and Administration Dept'
+	 when DepartmentGroupName='Manufacturing' then 'Manufacturing Dept'
+	 when DepartmentGroupName='Quality Assurance' then 'Quality Assurance Dept'
+	 when DepartmentGroupName='Research and Development' then 'Research and Development Dept'
+	 when DepartmentGroupName='Sales and Marketing' then 'Sales and Marketing Dept'
+	 Else 'Unknown'
+	 end AS Department
+      
+  FROM [AdventureWorksDW2014].[dbo].[FactFinance] ff
+  JOIN [AdventureWorksDW2014].[dbo].[DimOrganization] do
+  ON ff.OrganizationKey=do.OrganizationKey
+  JOIN [AdventureWorksDW2014].[dbo].[DimDepartmentGroup] dg
+  ON dg.DepartmentGroupKey=ff.DepartmentGroupKey
+  JOIN [AdventureWorksDW2014].[dbo].[DimAccount] da
+  ON da.AccountKey=ff.AccountKey
+  JOIN [AdventureWorksDW2014].[dbo].[DimScenario] ds
+  ON ds.ScenarioKey=ff.ScenarioKey</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DepartmentGroupName">
+          <DataField>DepartmentGroupName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Department">
+          <DataField>Department</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Dept">
+      <DataType>String</DataType>
+      <Prompt>Dept</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Dept</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>df9bc60c-fb4c-4095-84bf-ccc15e90945f</rd:ReportID>
+</Report>
