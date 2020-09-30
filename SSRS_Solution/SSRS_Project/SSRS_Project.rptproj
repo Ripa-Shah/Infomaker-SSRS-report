@@ -49,16 +49,25 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="DST_Emp.rsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <DataSource Include="DS_EmpMast.rds" />
     <DataSource Include="DS_Page.rds" />
   </ItemGroup>
   <ItemGroup>
     <Report Include="Basic Report.rdl" />
     <Report Include="Basic Tabular Report.rdl" />
     <Report Include="Blocked_rpt.rdl" />
-    <Report Include="Dynamic_Parameter_rpt.rdl" />
+    <Report Include="CascadeReport.rdl" />
+    <Report Include="DateParameter.rdl" />
+    <Report Include="Dynamic_Parameter.rdl" />
+    <Report Include="FilterReport.rdl" />
     <Report Include="Multiple_Stepped_rpt.rdl" />
+    <Report Include="MultivalueSelection_Rpr.rdl" />
     <Report Include="PageWise Report.rdl" />
     <Report Include="Page_rpt.rdl" />
+    <Report Include="RadioButton_Report.rdl" />
     <Report Include="Report2.rdl" />
     <Report Include="Report3.rdl" />
     <Report Include="RowNumber.rdl" />
