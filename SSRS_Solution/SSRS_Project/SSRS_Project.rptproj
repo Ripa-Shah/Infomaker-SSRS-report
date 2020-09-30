@@ -61,6 +61,7 @@
     <Report Include="Blocked_rpt.rdl" />
     <Report Include="CascadeReport.rdl" />
     <Report Include="DateParameter.rdl" />
+    <Report Include="Detail_Rpt.rdl" />
     <Report Include="Dynamic_Parameter.rdl" />
     <Report Include="FilterReport.rdl" />
     <Report Include="Multiple_Stepped_rpt.rdl" />
@@ -68,12 +69,14 @@
     <Report Include="NULLValueParameter.rdl" />
     <Report Include="PageWise Report.rdl" />
     <Report Include="Page_rpt.rdl" />
+    <Report Include="ParameterOptional.rdl" />
     <Report Include="RadioButton_Report.rdl" />
     <Report Include="Report2.rdl" />
     <Report Include="Report3.rdl" />
     <Report Include="RowNumber.rdl" />
     <Report Include="StaticParameter.rdl" />
     <Report Include="Stepped_rpt.rdl" />
+    <Report Include="Summary_Rpt.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
