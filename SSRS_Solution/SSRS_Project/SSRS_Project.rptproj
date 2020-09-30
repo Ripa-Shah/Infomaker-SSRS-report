@@ -65,6 +65,7 @@
     <Report Include="FilterReport.rdl" />
     <Report Include="Multiple_Stepped_rpt.rdl" />
     <Report Include="MultivalueSelection_Rpr.rdl" />
+    <Report Include="NULLValueParameter.rdl" />
     <Report Include="PageWise Report.rdl" />
     <Report Include="Page_rpt.rdl" />
     <Report Include="RadioButton_Report.rdl" />
