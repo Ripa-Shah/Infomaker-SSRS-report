@@ -49,12 +49,20 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="DST_Emp.rsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <DataSource Include="DS_TmsEPrd.rds" />
+  </ItemGroup>
+  <ItemGroup>
     <Report Include="Alternative_Row_Color_Change.rdl" />
     <Report Include="DetailSummary_SubReport.rdl" />
     <Report Include="GroupWiseColorChange.rdl" />
+    <Report Include="HideRowsUsingExpression.rdl" />
     <Report Include="Master_SubReport.rdl" />
     <Report Include="NullValue_MultiValueParameter.rdl" />
     <Report Include="NumberOFStudentsPerProfessor.rdl" />
+    <Report Include="ReplaceNullValuesWithExpressions.rdl" />
     <Report Include="StoredProcedureParameter.rdl" />
     <Report Include="StudentCourseInfo.rdl" />
     <Report Include="STUDENTCOURSES_WildCard.rdl" />
