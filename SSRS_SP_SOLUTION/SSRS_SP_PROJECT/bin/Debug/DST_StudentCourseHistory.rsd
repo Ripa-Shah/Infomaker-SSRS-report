@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DS_TmsEPrd</DataSourceReference>
+      <CommandText>select distinct YR_CDE,TRM_CDE,CRS_CDE,CRS_TITLE,CREDIT_HRS,CRS_TYPE from STUDENT_CRS_HIST </CommandText>
+    </Query>
+    <Fields>
+      <Field Name="YR_CDE">
+        <DataField>YR_CDE</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TRM_CDE">
+        <DataField>TRM_CDE</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CRS_CDE">
+        <DataField>CRS_CDE</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CRS_TITLE">
+        <DataField>CRS_TITLE</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CREDIT_HRS">
+        <DataField>CREDIT_HRS</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="CRS_TYPE">
+        <DataField>CRS_TYPE</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
