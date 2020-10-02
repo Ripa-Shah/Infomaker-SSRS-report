@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DS_TmsEPrd</DataSourceReference>
+      <CommandText>SELECT 
+      e.[ID_NUM]
+	  ,nm.LAST_NAME +', '+nm.FIRST_NAME as 'Name'
+      ,[ACT_INACT_STS]
+      ,[FULLPART_STS]
+      ,[GRP_CDE]
+      ,[SUBGRP_CDE]
+      ,[ORIG_HIRE_DTE]
+      ,[TOTAL_YRS_OF_SRV]
+      ,[CUR_POS_YRS_SRV]
+      ,[CONTIN_YRS_OF_SRV]
+      ,[TERMINATION_DTE]
+      ,[TERMINATION_REASON]
+      ,[ADDRESS_CDE]
+      ,[ADDRESS_CDE_WRK]
+    
+  FROM [TmsEPrd].[dbo].[EMPL_MAST] e
+  JOIN [TmsEPrd].[dbo].[NAME_MASTER] nm
+  ON nm.ID_NUM=e.ID_NUM</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="ID_NUM">
+        <DataField>ID_NUM</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Name">
+        <DataField>Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ACT_INACT_STS">
+        <DataField>ACT_INACT_STS</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="FULLPART_STS">
+        <DataField>FULLPART_STS</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="GRP_CDE">
+        <DataField>GRP_CDE</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SUBGRP_CDE">
+        <DataField>SUBGRP_CDE</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ORIG_HIRE_DTE">
+        <DataField>ORIG_HIRE_DTE</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="TOTAL_YRS_OF_SRV">
+        <DataField>TOTAL_YRS_OF_SRV</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="CUR_POS_YRS_SRV">
+        <DataField>CUR_POS_YRS_SRV</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="CONTIN_YRS_OF_SRV">
+        <DataField>CONTIN_YRS_OF_SRV</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="TERMINATION_DTE">
+        <DataField>TERMINATION_DTE</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="TERMINATION_REASON">
+        <DataField>TERMINATION_REASON</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ADDRESS_CDE">
+        <DataField>ADDRESS_CDE</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ADDRESS_CDE_WRK">
+        <DataField>ADDRESS_CDE_WRK</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
