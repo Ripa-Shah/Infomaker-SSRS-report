@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DS_TmsEPrd</DataSourceReference>
+      <CommandText>  SELECT sm.yr_cde,   
+         sm.trm_cde,   
+         sm.crs_cde,   
+         ss.monday_cde,   
+         ss.tuesday_cde,   
+         ss.wednesday_cde,   
+         ss.thursday_cde,   
+         ss.friday_cde,   
+         ss.saturday_cde,   
+         ss.sunday_cde,   
+         ss.begin_tim,   
+         ss.end_tim,   
+         ss.begin_dte,   
+         ss.end_dte,   
+         ss.days_tim_ovrid,   
+         ss.loc_cde,   
+         ss.bldg_cde,   
+         ss.room_cde,   
+         ss.comment_txt,   
+         sm.short_crs_title_1,   
+         nm.first_name,   
+         nm.last_name,   
+         ss.professor_id_num,   
+         ss.seq_num_2,   
+         sm.x_listed_parnt_crs,
+		  (
+      SELECT count(*)
+      FROM STUDENT_CRS_HIST sch
+      WHERE sch.YR_CDE = ss.YR_CDE
+         AND sch.TRM_CDE = ss.TRM_CDE
+         AND sch.CRS_CDE = ss.CRS_CDE
+   ) AS [No of student] 
+    FROM section_master sm,   
+         section_schedules ss,   
+         name_master nm
+   WHERE ( ss.yr_cde = sm.yr_cde ) and  
+         ( ss.trm_cde = sm.trm_cde ) and  
+         ( ss.crs_cde = sm.crs_cde ) and  
+         ( ss.professor_id_num = nm.id_num )</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="yr_cde">
+        <DataField>yr_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="trm_cde">
+        <DataField>trm_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="crs_cde">
+        <DataField>crs_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="monday_cde">
+        <DataField>monday_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="tuesday_cde">
+        <DataField>tuesday_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="wednesday_cde">
+        <DataField>wednesday_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="thursday_cde">
+        <DataField>thursday_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="friday_cde">
+        <DataField>friday_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="saturday_cde">
+        <DataField>saturday_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="sunday_cde">
+        <DataField>sunday_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="begin_tim">
+        <DataField>begin_tim</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="end_tim">
+        <DataField>end_tim</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="begin_dte">
+        <DataField>begin_dte</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="end_dte">
+        <DataField>end_dte</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="days_tim_ovrid">
+        <DataField>days_tim_ovrid</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="loc_cde">
+        <DataField>loc_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="bldg_cde">
+        <DataField>bldg_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="room_cde">
+        <DataField>room_cde</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="comment_txt">
+        <DataField>comment_txt</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="short_crs_title_1">
+        <DataField>short_crs_title_1</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="first_name">
+        <DataField>first_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="last_name">
+        <DataField>last_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="professor_id_num">
+        <DataField>professor_id_num</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="seq_num_2">
+        <DataField>seq_num_2</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="x_listed_parnt_crs">
+        <DataField>x_listed_parnt_crs</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="No_of_student">
+        <DataField>No of student</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
