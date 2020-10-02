@@ -51,6 +51,7 @@
   <ItemGroup>
     <Report Include="Alternative_Row_Color_Change.rdl" />
     <Report Include="DetailSummary_SubReport.rdl" />
+    <Report Include="GroupWiseColorChange.rdl" />
     <Report Include="Master_SubReport.rdl" />
     <Report Include="NullValue_MultiValueParameter.rdl" />
     <Report Include="NumberOFStudentsPerProfessor.rdl" />
