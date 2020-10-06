@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DS_TmsEPrd</DataSourceReference>
+      <CommandText>SELECT 
+      e.[ID_NUM]
+	  ,nm.LAST_NAME +', '+nm.FIRST_NAME as 'Name'
+      ,[ACT_INACT_STS]
+      ,[FULLPART_STS]
+      ,[GRP_CDE]
+      ,[SUBGRP_CDE]
+      ,[ORIG_HIRE_DTE]
+      ,[TOTAL_YRS_OF_SRV]
+      ,[CUR_POS_YRS_SRV]
+      ,[CONTIN_YRS_OF_SRV]
+      ,[TERMINATION_DTE]
+      ,[TERMINATION_REASON]
+      ,[ADDRESS_CDE]
+      ,[ADDRESS_CDE_WRK]
+    
+  FROM [TmsEPrd].[dbo].[EMPL_MAST] e
+  JOIN [TmsEPrd].[dbo].[NAME_MASTER] nm
+  ON nm.ID_NUM=e.ID_NUM
+ </CommandText>
+    </Query>
+  </DataSet>
+</SharedDataSet>
