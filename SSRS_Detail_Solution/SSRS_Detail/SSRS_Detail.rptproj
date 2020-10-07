@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Report Include="HeaderReport.rdl" />
+    <Report Include="ShowHideColumnsWithParameter.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
