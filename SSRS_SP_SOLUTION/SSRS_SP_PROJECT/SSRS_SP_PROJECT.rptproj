@@ -12,7 +12,7 @@
     <TargetDatasetFolder>Datasets</TargetDatasetFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
     <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
-    <TargetServerURL>http://localhost/reportserver</TargetServerURL>
+    <TargetServerURL>http://desktop-m7q49f6/ReportServer_MSSQL</TargetServerURL>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
     <FullPath>DebugLocal</FullPath>
@@ -66,6 +66,7 @@
     <Report Include="NullValue_MultiValueParameter.rdl" />
     <Report Include="NumberOFStudentsPerProfessor.rdl" />
     <Report Include="ReplaceNullValuesWithExpressions.rdl" />
+    <Report Include="RowsPerPage_Parameter.rdl" />
     <Report Include="StoredProcedureParameter.rdl" />
     <Report Include="StudentCourseInfo.rdl" />
     <Report Include="STUDENTCOURSES_WildCard.rdl" />
