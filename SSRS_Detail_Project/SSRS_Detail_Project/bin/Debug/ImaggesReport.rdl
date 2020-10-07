@@ -437,7 +437,7 @@
                                   <Value>=Fields!ValidTo.Value</Value>
                                   <Style>
                                     <FontFamily>times New Roman</FontFamily>
-                                    <Format>MM/dd/yyyy</Format>
+                                    <Format>MM/dd/yy</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -516,7 +516,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>1.61806in</Height>
         <Style />
       </Body>
       <Width>6.5in</Width>
