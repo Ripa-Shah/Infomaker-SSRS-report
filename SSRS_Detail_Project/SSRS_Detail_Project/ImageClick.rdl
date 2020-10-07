@@ -795,6 +795,7 @@ WHERE SupplierCategoryName=@category</CommandText>
     <ReportParameter Name="category">
       <DataType>String</DataType>
       <Prompt>category</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
