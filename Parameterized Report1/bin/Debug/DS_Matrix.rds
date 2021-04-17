@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DS_Matrix">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=DESKTOP-M7Q49F6\MSSQL;Initial Catalog=AdventureWorksDW2014</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
+    <Prompt>Specify a user name and password for data source DS_Matrix</Prompt>
+  </ConnectionProperties>
+  <DataSourceID>a92203b6-0f33-4457-b501-3de4c49fc4e7</DataSourceID>
+</RptDataSource>
